@@ -1,3 +1,113 @@
+2003/12/19 00:20 (+0100) ebassi
+	
+	* Print.pm: version 0.61
+	
+	* xs/GnomeGlyphList.xs: implemented:
+		gnome_glyphlist_advance
+		gnome_glyphlist_kerning
+		gnome_glyphlist_letterspace
+		gnome_glyphlist_font
+		gnome_glyphlist_moveto
+		gnome_glyphlist_rmoveto
+		gnome_glyphlist_glyph
+		gnome_glyphlist_glyphs
+		gnome_glyphlist_text_dumb
+	
+	* xs/GnomePrintUnit.xs: improved documentation.
+	
+	* xs/GnomePrintConfig.xs: implemented:
+		gnome_print_config_set_length
+
+2003/12/17 15:49 (+0100) ebassi
+	
+	* Print.pm: version 0.60
+	
+	* examples/buffer-print.pl: added this example program that prints a
+	  buffer of lines, wrapping them.
+	
+	* examples/basic-font.pl: changed font name to "Sans Regular".
+
+	* t/05.GnomeFont.t, t/06.GnomeFontDialog.t: since libgnomeprint now
+	  checks for a fontface (see this bugzilla entry:
+	  http://bugzilla.gnome.org/show_bug.cgi?id=125836), searching for
+	  font "Sans" broke these tests; changed to "Sans Regular" which
+	  should be the standard fallback.
+	  
+	* gnomeprintperl.h: revert last change, since it breaks (wrt pango)
+
+2003/12/02 18:22 (+0100) ebassi
+
+	* gnomeprintperl.h: include gperl.h instead of gnome2perl.h.
+
+2003/12/02 12:46 (-0500) muppetman
+
+	* t/06.GnomeFontDialog.t: this one slipped through the cracks when
+	Gnome2::Print::Font changed to Gnome2::Print::Font::Constants.
+
+	* t/00.GnomePrint.t: my version of Test::More's ok() was mortally
+	confused by Gnome2::Print->get_version_info returning a list; check
+	that it returns three elements instead.
+
+2003/11/29 18:45 (+0100) ebassi
+
+	* xs/GnomePrintJob.xs, xs/GnomeFont.xs, xs/GnomeFontFace.xs,
+	  xs/GnomePrintConfig.xs, xs/GnomePrintDialog.xs: better apidoc for
+	  PPCODE in methods.
+
+2003/11/29 18:15 (+0100) ebassi
+
+	* t/*: updated tests for constants modules change, and for unused
+	  variables.
+	* Makefile.PL: put constants modules in the right place.
+
+2003/11/28 23:20 (+0100) ebassi
+
+	* xs/GnomePrint2.xs: added methods:
+		
+		Gnome2::Print->get_version_info
+		Gnome2::Print->check_version
+	  
+	  based on code from Torsten Schoenfeld; those methods replace the
+	  get_version class method.
+
+2003/11/28 19:00 (+0100) ebassi
+
+	* xs/GnomeFont.xs, xs/GnomePrintJob.xs, xs/GnomePrintDialog.xs: added
+	  apidoc for PPCODE sections.
+
+2003/11/28 18:34 (+0100) ebassi
+
+	* Makefile.PL, pm/Config.pm, pm/Font.pm, t/05.GnomeFont.t: moved
+	  constants to another namespace to avoid collisions with the
+	  respective classes; these are the new namespaces for Config and
+	  Font constants:
+	  	
+		Gnome2::Print::Config -> Gnome2::Print::Config::Constants
+		Gnome2::Print::Font   -> Gnome2::Print::Font::Constants
+
+2003/11/25 17:26 (-0500) rwmcfa1
+
+	* Makefile.PL, xs/GnomePrint2.xs: add apidoc auto generation stuff
+
+2003/11/25 17:26 (-0500) rwmcfa1
+
+	* Makefile.PL: we depend on Gnome2-VFS now b/c Gnome2 does.
+
+2003/11/24 23:02 (-0500) rwmcfa1
+
+	* perl-Gnome2-Print.spec.in: fixed requires bug.
+
+2003/11/13 21:15 (-0500) muppetman
+
+
+	* Makefile.PL, README: require 1.00 rather than 1.00rc1 -- we disavow
+	the existence of the release candidates.
+
+2003/11/11 00:36 (-0500) muppetman
+
+	* MANIFEST, debian/*: remove the debian packaging files, since having
+	them in the upstream dist makes it difficult for the maintainers
+
 2003/10/20 19:59 ebassi
 
 	* t/05.GnomeFont.t: included tests for newly implemented methods.

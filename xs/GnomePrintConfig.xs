@@ -89,6 +89,9 @@ void
 gnome_print_config_dump (gpc)
 	GnomePrintConfig	* gpc
 
+=for apidoc
+=signature ($width, $height) = $gpc->get_page_size
+=cut
 void
 gnome_print_config_get_page_size (gpc)
 	GnomePrintConfig	* gpc
@@ -185,3 +188,9 @@ gnome_print_config_set_double (config, key, val)
 	gdouble 		val
 
 ##gboolean gnome_print_config_set_length (GnomePrintConfig *config, const guchar *key, gdouble val, const GnomePrintUnit *unit);
+gboolean
+gnome_print_config_set_length (config, key, val, unit)
+	GnomePrintConfig	* config
+	const guchar		* key
+	gdouble			val
+	const GnomePrintUnit	* unit

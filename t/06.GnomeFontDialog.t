@@ -10,14 +10,14 @@ BEGIN { use_ok('Gnome2::Print') };
 
 #########################
 
-ok( $font = Gnome2::Print::Font->find_closest("Sans Serif", 12) );
+ok( $font = Gnome2::Print::Font->find_closest("Sans Regular", 12.0) );
 ok( $font->get_name );
 
 ok( $weight = Gnome2::Print::Font->bold );
 
-use_ok('Gnome2::Print::Font');
+use_ok('Gnome2::Print::Font::Constants');
 ok( $weight = Gnome2::Print::Font::GNOME_FONT_BOLD );
 
-ok( @font_list = Gnome2::Print::Font->list );
+ok( Gnome2::Print::Font->list );
 ok( @family_list = Gnome2::Print::Font->family_list );
-ok( @style_list = Gnome2::Print::Font->style_list($family_list[0]) );
+ok( Gnome2::Print::Font->style_list($family_list[0]) );

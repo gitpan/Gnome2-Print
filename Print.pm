@@ -1,5 +1,5 @@
 #
-# $Header: /cvsroot/gtk2-perl/gtk2-perl-xs/GnomePrint2/Print.pm,v 1.8 2003/10/20 18:52:36 ebassi Exp $
+# $Header: /cvsroot/gtk2-perl/gtk2-perl-xs/GnomePrint2/Print.pm,v 1.12 2003/12/19 14:08:47 ebassi Exp $
 #
 
 package Gnome2::Print;
@@ -31,7 +31,7 @@ our @EXPORT = qw(
 	
 );
 
-our $VERSION = '0.52';
+our $VERSION = '0.61';
 
 sub dl_load_flags { 0x01 }
 

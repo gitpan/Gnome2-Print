@@ -6,8 +6,8 @@
 #########################
 
 use Test::More tests => 2;
-BEGIN { use_ok('Gnome2::Print') };
+use_ok('Gnome2::Print');
 
 #########################
 
-ok( $version = Gnome2::Print->get_version );
+is( scalar (@{ [Gnome2::Print->get_version_info] }), 3 );

@@ -1,7 +1,7 @@
 #ifndef _GNOME_PRINT_PERL_H_
 #define _GNOME_PRINT_PERL_H_
 
-#include <gnome2perl.h>
+#include <gtk2perl.h>
 
 /* basic include files */
 #include <libgnomeprint/gnome-font.h>
@@ -19,5 +19,6 @@
 #include <libgnomeprintui/gnome-print-unit-selector.h>
 
 #include "gnomeprintperl-autogen.h"
+#include "gnomeprintperl-version.h"
 
 #endif /* _GNOME_PRINT_PERL_H_ */
