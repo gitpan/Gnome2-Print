@@ -6,7 +6,6 @@ MODULE = Gnome2::Print::Config	PACKAGE = Gnome2::Print::Config PREFIX = gnome_pr
 ### the key's string returned is constant, so we don't need to think about it.
 guchar *
 constants (class)
-	SV * class
     ALIAS:
     	Gnome2::Print::Config::key_paper_size = 1
 	Gnome2::Print::Config::key_paper_width = 2
@@ -66,12 +65,14 @@ constants (class)
 		case 26: RETVAL = GNOME_PRINT_KEY_OUTPUT_FILENAME; break;
 		case 27: RETVAL = GNOME_PRINT_KEY_DOCUMENT_NAME; break;
 		case 28: RETVAL = GNOME_PRINT_KEY_PREFERED_UNIT; break;
+
+		default: RETVAL = NULL;
 	}
     OUTPUT:
 	RETVAL
 
 GnomePrintConfig_noinc *
-gnome_print_config_default (SV * class);
+gnome_print_config_default (class);
     C_ARGS:
 	/* void */
 

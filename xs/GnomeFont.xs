@@ -6,7 +6,6 @@ MODULE = Gnome2::Print::Font	PACKAGE = Gnome2::Print::Font
 ### mmh... I'm wondering if I should file this as a bug in gnome-print.
 gint
 constants (class)
-	SV * class
     ALIAS:
 	Gnome2::Print::Font::lightest    = 1
 	Gnome2::Print::Font::extra_light = 2
@@ -40,6 +39,10 @@ constants (class)
 		case 13: RETVAL = GNOME_FONT_BLACK; break;
 		case 14: RETVAL = GNOME_FONT_EXTRABLACK; break; 
 		case 15: RETVAL = GNOME_FONT_HEAVIEST; break;
+
+		default: RETVAL = 0; /* you wouldn't want this, and in normal
+		                      * operation, we shouldn't trigger it.
+				      * it shuts up the compiler in -Wall. */
 	}
     OUTPUT:
 	RETVAL
@@ -159,7 +162,6 @@ gdouble gnome_font_get_underline_thickness (GnomeFont *font)
  ## This is not very intelligent, so use with caution (Lauris)
 GnomeFont_noinc *
 gnome_font_find (class, name, size)
-	SV * class
 	const guchar *name
 	gdouble size
     C_ARGS:
@@ -167,7 +169,6 @@ gnome_font_find (class, name, size)
 
 GnomeFont_noinc *
 gnome_font_find_closest (class, name, size)
-	SV * class
 	const guchar *name
 	gdouble size
     C_ARGS:
@@ -175,7 +176,6 @@ gnome_font_find_closest (class, name, size)
 
 GnomeFont_noinc *
 gnome_font_find_from_full_name (class, string)
-	SV * class
 	const guchar *string
     C_ARGS:
     	string
@@ -183,7 +183,6 @@ gnome_font_find_from_full_name (class, string)
 
 GnomeFont_noinc *
 gnome_font_find_closest_from_full_name (class, string)
-	SV * class
 	const guchar *string
     C_ARGS:
     	string
@@ -205,7 +204,6 @@ on this system.
 =cut
 void
 gnome_font_list (class)
-	SV * class
     PREINIT:
     	GList *list, *i;
     PPCODE:
@@ -226,7 +224,6 @@ present on this system.
 =cut
 void
 gnome_font_family_list (class)
-	SV * class
     PREINIT:
     	GList *list, *i;
     PPCODE:
@@ -247,7 +244,6 @@ given font family.
 =cut
 void
 gnome_font_style_list (class, family)
-	SV * class;
 	const guchar * family
     PREINIT:
     	GList *list, *i;

@@ -1,5 +1,4 @@
-
-Gnome2::Print version 0.5
+Gnome2::Print version 0.94
 ===========================
 
 The Gnome2::Print module allows a perl developer to use the Gnome Printing
@@ -38,7 +37,9 @@ perl how to get to this library directory so you can use it; there are three
 ways:
 
   in your environment (the easiest):
-    PERL5LIB=/some/other/place/lib/perl5/site_perl:$PERL5LIB
+    # assuming a bourne-style shell
+    PERL5LIB=/some/other/place/lib/perl5/site_perl
+    export PERL5LIB
 
   on the perl command line:
     perl -I /some/other/place/lib/perl5/site_perl yourscript
@@ -52,14 +53,14 @@ DEPENDENCIES
 This module requires these other modules and libraries:
 
   perl >= 5.8.0
-  Glib >= 1.00 (perl module and requisite C libraries)
-  Gtk2 >= 1.00 (perl module and requisite C libraries)
+  Glib >= 1.04 (perl module and requisite C libraries)
+  Gtk2 >= 1.04 (perl module and requisite C libraries)
   libgnomeprintui-2.2 (C library)
 
 
-COPYRIGHT AND LICENCE
+COPYRIGHT AND LICENSE
 
-Copyright (C) 2003 by the gtk2-perl team (see the file AUTHORS for a
+Copyright (C) 2003,2004 by the gtk2-perl team (see the file AUTHORS for a
 complete list)
 
 This library is free software; you can redistribute it and/or
@@ -76,5 +77,4 @@ You should have received a copy of the GNU Library General Public
 License along with this library; if not, write to the 
 Free Software Foundation, Inc., 59 Temple Place - Suite 330, 
 Boston, MA  02111-1307  USA.
-:w
 

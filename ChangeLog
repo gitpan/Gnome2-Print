@@ -1,3 +1,117 @@
+2004/07/05 23:32 (+0200) ebassi
+	
+	A t/08.GnomePrintPaper.t
+	
+	* xs/GnomePrintPaper.xs: fixed my stupid cut'n'paste typo for
+	gnome_print_paper_get_by_name (patch by Torsten Schoenfeld). Also
+	fixed the other class methods.
+	
+	* t/08.GnomePrintPaper.t: added a test case for the
+	Gnome2::Print::Paper object.
+
+	* Print.pm, NEWS, README: new release: 0.94
+
+2004/07/04 22:40 (+0200) ebassi
+
+	A AUTHORS
+	A NEWS
+	
+	* Print.pm, NEWS, README: new release: 0.93
+
+2004/07/04 21:41 (+0200) ebassi
+	
+	A copyright.pod
+	A gnomeprint.typemap
+	A doctypes
+	
+	* Makefile.PL: update required versions for ExtUtils::*; update the
+	maps list.
+
+	* xs/GnomePrintPaper.xs: implemented:
+		gnome_print_paper_get_default
+		gnome_print_paper_by_name
+		gnome_print_paper_get_by_size
+		gnome_print_paper_get_closest_by_size
+		gnome_print_paper_get_list
+	GnomePrintPaper is an unregistered boxed type; in perl it's an
+	hashref.
+
+2004/05/29 01:38 (+0100) ebassi
+	
+	* Print.pm, README: new release: 0.92.
+	* Makefile.PL: update required version for Glib and Gtk to >= 1.04.
+
+2004/05/27 17:22 (+0100) ebassi
+	
+	* Makefile.PL: remove dependency on Gnome2 and Gnome2::VFS modules.
+	* xs/GnomePrint2.xs: remove the gnome2perl.h include.
+
+2004/03/14 23:55 (+0100) ebassi
+
+	* xs/GnomePrint2.xs
+	t/00.GnomePrint.t: Adapt to the new version information
+	implementation policy.
+
+2004/03/14 08:40 (+0100) ebassi
+
+	* Print.pm: unindent ABSTRACT text (patch by Torsten Schoenfeld).
+
+2004/02/26 17:37 (-0500) muppetman
+
+	* README: fix the spelling of license; update the sandbox instructions.
+
+2004/02/21 02:56 (+0100) ebassi
+	
+	* Print.pm, README, META.yml: bumped version to 0.91 - this is the
+	last beta cycle for the Gnome2::Print module.
+	
+	* Makefile.PL: cleaned and updated build system.
+
+2004/02/05 15:38 (+0100) ebassi
+
+	* xs/GnomePrintUnit.xs, xs/GnomePrintUnitSelector.xs: hush compiler
+	warnings (patch by Torsten Schoenfeld).
+
+2004/01/24 21:44 (-0500) rwmcfa1
+
+	* Makefile.PL: removed runtime_reqs stuff, replaced by the pkg-config 
+	trick
+	
+	* perl-Gnome2-Print.spec.in: use pkg-config for Requires version
+
+2004/01/14 21:38 (-0500) muppetman
+
+	* Makefile.PL, README: update requirements to 1.020, since we need
+	Glib::MakeHelper
+
+2003/12/31 02:27 (-0500) muppetman
+
+	* xs/GnomePrint2.xs: mark ax unused in functions which don't touch
+	the input stack, to hush compiler warnings
+
+	* xs/GnomeFont.xs, xs/GnomePrintConfig.xs,
+	xs/GnomePrintPaperSelector.xs, xs/GnomePrintUnit.xs:
+	don't let RETVAL be used uninitialized in alias switches.
+
+	* xs/GnomePrintJobPreview.xs: don't give a type to 'class' when it's
+	not needed
+
+2003/12/29 16:32 (-0500) rwmcfa1
+
+	* perl-Gnome2-Print.spec.in: use the new DATE replacement in 
+	conjunction with VERSION to create the changlog on the fly, which is 
+	better.
+
+2003/12/23 00:02 (-0500) muppetman
+
+	* xs/GnomeFont.xs, xs/GnomeFontDialog.xs, xs/GnomeFontFace.xs,
+	xs/GnomeFontPreview.xs, xs/GnomeFontSelection.xs, xs/GnomeGlyphList.xs,
+	xs/GnomePrintConfig.xs, xs/GnomePrintContext.xs, xs/GnomePrintJob.xs,
+	xs/GnomePrintPaperSelector.xs, xs/GnomePrintUnit.xs,
+	xs/GnomePrintUnitSelector.xs: remove the type specifiers on the class
+	parameters, to keep xsubpp from creating a value that will be unused
+	and therefore cause unused variable warnings.
+
 2003/12/19 00:20 (+0100) ebassi
 	
 	* Print.pm: version 0.61

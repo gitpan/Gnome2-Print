@@ -1,4 +1,3 @@
-#include <gnome2perl.h>
 #include "gnomeprintperl.h"
 
 
@@ -13,18 +12,19 @@ BOOT:
 #include "boot.xsh"
 
 =for apidoc
-=signature (major_version, minor_version, micro_version) = Gnome2::Print->version_info
+=signature (major_version, minor_version, micro_version) = Gnome2::Print->GET_VERSION_INFO
 =cut
 void
-gnome_print_get_version_info (class)
+GET_VERSION_INFO (class)
     PPCODE:
 	EXTEND (SP, 3);
 	PUSHs (sv_2mortal (newSViv (GNOMEPRINT_MAJOR_VERSION)));
 	PUSHs (sv_2mortal (newSViv (GNOMEPRINT_MINOR_VERSION)));
 	PUSHs (sv_2mortal (newSViv (GNOMEPRINT_MICRO_VERSION)));
+	PERL_UNUSED_VAR (ax);
 
 bool
-gnome_print_check_version (class, major, minor, micro)
+CHECK_VERSION (class, major, minor, micro)
 	int major
 	int minor
 	int micro

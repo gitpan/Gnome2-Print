@@ -22,6 +22,8 @@ members (GnomePrintUnit * unit)
 		case 4: RETVAL = newSVGChar (unit->abbr);        break;
 		case 5: RETVAL = newSVGChar (unit->plural);      break;
 		case 6: RETVAL = newSVGChar (unit->abbr_plural); break;
+
+		default: RETVAL = &PL_sv_undef;
 	}
     OUTPUT:
     	RETVAL
@@ -32,33 +34,37 @@ members (GnomePrintUnit * unit)
 ##const GnomePrintUnit *gnome_print_unit_get_identity (guint base);
 GnomePrintUnit_copy *
 gnome_print_unit_get_identity (class, base)
-	SV * class
 	guint base
-    C_ARGS:
-    	base
+    CODE:
+	RETVAL = (GnomePrintUnit *) gnome_print_unit_get_identity (base);
+    OUTPUT:
+	RETVAL
 
 ##const GnomePrintUnit *gnome_print_unit_get_default (void);
 GnomePrintUnit_copy *
 gnome_print_unit_get_default (class)
-	SV * class
-    C_ARGS:
-    	/* void */
+    CODE:
+	RETVAL = (GnomePrintUnit *) gnome_print_unit_get_default ();
+    OUTPUT:
+	RETVAL
 
 ##const GnomePrintUnit *gnome_print_unit_get_by_name (const guchar *name);
 GnomePrintUnit_copy *
 gnome_print_unit_get_by_name (class, name)
-	SV * class
 	const guchar * name
-    C_ARGS:
-    	name
+    CODE:
+	RETVAL = (GnomePrintUnit *) gnome_print_unit_get_by_name (name);
+    OUTPUT:
+	RETVAL
 
 ##const GnomePrintUnit *gnome_print_unit_get_by_abbreviation (const guchar *abbreviation);
 GnomePrintUnit_copy *
 gnome_print_unit_get_by_abbreviation (class, abbreviation)
-	SV * class
 	const guchar * abbreviation
-    C_ARGS:
-    	abbreviation
+    CODE:
+	RETVAL = (GnomePrintUnit *) gnome_print_unit_get_by_abbreviation (abbreviation);
+    OUTPUT:
+	RETVAL
 
 ##GList * gnome_print_unit_get_list (guint bases);
 =for apidoc

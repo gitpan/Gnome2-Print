@@ -1,5 +1,5 @@
 #
-# $Header: /cvsroot/gtk2-perl/gtk2-perl-xs/GnomePrint2/Print.pm,v 1.12 2003/12/19 14:08:47 ebassi Exp $
+# $Header: /cvsroot/gtk2-perl/gtk2-perl-xs/GnomePrint2/Print.pm,v 1.17 2004/07/05 21:55:57 ebassi Exp $
 #
 
 package Gnome2::Print;
@@ -31,7 +31,7 @@ our @EXPORT = qw(
 	
 );
 
-our $VERSION = '0.61';
+our $VERSION = '0.94';
 
 sub dl_load_flags { 0x01 }
 
@@ -68,8 +68,8 @@ Gnome2::Print - Perl wrappers for the Gnome Print utilities.
 
 =head1 ABSTRACT
 
-  Perl bindings to the 2.2 series of the Gnome Print libraries,
-  for use with gtk2-perl.
+Perl bindings to the 2.2 series of the Gnome Print libraries, for use
+with gtk2-perl.
 
 =head1 DESCRIPTION
 
@@ -86,7 +86,7 @@ Find out more about Gnome+ at http://www.gnome.org.
 
 =head1 SEE ALSO
 
-perl(1), Glib(3pm), Gtk2(3pm), Gnome2(3pm).
+L<perl>(1), L<Glib>(3pm), L<Gtk2>(3pm), L<Gnome2>(3pm).
 
 =head1 AUTHOR
 
@@ -95,7 +95,7 @@ muppet E<lt>scott at asofyet dot orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2003 by Emmanuele Bassi
+Copyright 2003, 2004 by Emmanuele Bassi
 
 Copyright 2003 by muppet
 
