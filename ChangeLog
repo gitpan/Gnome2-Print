@@ -1,3 +1,51 @@
+2006-11-15  Emmanuele Bassi  <ebassi@gnome.org>
+
+	* README:
+	* Print.pm: Bump to 1.000.
+
+2006-11-15  Emmanuele Bassi  <ebassi@gnome.org>
+
+	* Print.pm: Add deprecation warning.
+
+	* README:
+	* Makefile.PL: Update requirements.
+
+2006-11-15  Emmanuele Bassi  <ebassi@gnome.org>
+
+	Patch by Torsten Schoenfeld for removing signedness warnings.
+
+	* xs/GnomePrintConfig.xs:
+	* xs/GnomePrintPaper.xs:
+	* xs/GnomePrintUnit.xs: Use gchar* instead of guchar* and
+	remove signedness warnings.
+
+2005/08/23 00:45 (-0400) muppetman
+
+	* README, Print.pm: update to version 0.951.
+
+	* xs/GnomePrintPaper.xs: fix compile bug.
+
+2005/08/13 01:03 (+0100) ebassi
+
+	* README, NEWS, Print.pm: update to version 0.95.
+	
+	* xs/GnomePrintConfig.xs: wrapped Gnome2::Print::Config::set, which
+	was left not bound.
+
+	* t/01.GnomePrintConfig.t: test Gnome2::Print::Config::set.
+
+	* xs/GnomePrintPaper.xs: change the Gnome2::Print::Paper wrapper into
+	a blessed reference.
+
+	* t/08.GnomePrintPaper.t: test Gnome2::Print::Paper name.
+
+2004/10/24 11:55 (-0400) rwmcfa1
+
+	* MANIFEST.SKIP: updates
+
+	* perl-Gnome2-Print.spec.in: new scheme that addresses x86_64 problems
+	found by Carl Nygard
+
 2004/07/05 23:32 (+0200) ebassi
 	
 	A t/08.GnomePrintPaper.t

@@ -4,7 +4,7 @@ MODULE = Gnome2::Print::Config	PACKAGE = Gnome2::Print::Config PREFIX = gnome_pr
 
 ### some convenience keys to be used with set/get...
 ### the key's string returned is constant, so we don't need to think about it.
-guchar *
+char *
 constants (class)
     ALIAS:
     	Gnome2::Print::Config::key_paper_size = 1
@@ -161,6 +161,12 @@ gnome_print_config_gets (config, key)
 
 ##guchar * gnome_print_config_get (GnomePrintConfig *config, const guchar *key);
 ##gboolean gnome_print_config_set (GnomePrintConfig *config, const guchar *key, const guchar *value);
+
+gboolean
+gnome_print_config_set (config, key, value)
+	GnomePrintConfig * config
+	const guchar * key
+	const guchar * value
 
 ##gboolean gnome_print_config_get_boolean (GnomePrintConfig *config, const guchar *key, gboolean *val)
 
